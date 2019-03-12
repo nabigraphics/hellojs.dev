@@ -62,7 +62,7 @@ typings/
 
 # gatsbyJS directory
 .cache
-build/
+public/
 
 # webstorm idea
 .idea
