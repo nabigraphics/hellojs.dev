@@ -1,0 +1,51 @@
+@import "scss/theme/default";
+
+$button-border: $border-radius-size;
+$button-padding: 8px 14px;
+$button-light-background-color: white;
+$button-dark-background-color: #121213;
+
+.button {
+  display: inline-block;
+  border: 0;
+  outline: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  box-sizing: border-box;
+  border-radius: $button-border;
+  padding: $button-padding;
+  @include mboxshadow(1);
+  color: #121213;
+
+  &.light {
+    background-color: $button-light-background-color;
+  }
+  &.dark {
+    background-color: $button-dark-background-color;
+  }
+
+  &.href {
+    text-align: center;
+  }
+
+  &.href,
+  &.href:link,
+  &.href:visited,
+  &.href:hover,
+  &.href:active {
+    text-decoration: none;
+    color: #121213;
+  }
+
+  &:not(.disabled) {
+    cursor: pointer;
+    &:hover {
+      @include mboxshadow(2);
+    }
+  }
+
+  &.disabled {
+    cursor: not-allowed;
+    opacity: 0.25;
+  }
+}

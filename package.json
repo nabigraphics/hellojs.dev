@@ -1,0 +1,33 @@
+{
+  "name": "hellojs.dev",
+  "description": "my personal website",
+  "repository": "https://github.com/nabigraphics/hellojs.dev",
+  "author": "nabigraphics <hbh2692@naver.com>",
+  "license": "UNLICENSE",
+  "private": true,
+  "scripts": {
+    "gatsby": "sucrase-node ./node_modules/gatsby/dist/bin/gatsby.js",
+    "dev": "npm run gatsby develop",
+    "build": "gatsby build",
+    "start": "gatsby serve"
+  },
+  "dependencies": {
+    "@types/classnames": "^2.2.7",
+    "@types/react-helmet": "^5.0.8",
+    "classnames": "^2.2.6",
+    "eva-icons": "^1.1.1",
+    "gatsby": "^2.1.30",
+    "node-sass": "^4.11.0",
+    "react": "^16.8.4",
+    "react-dom": "^16.8.4",
+    "react-helmet": "^5.2.0"
+  },
+  "devDependencies": {
+    "gatsby-plugin-layout": "^1.0.13",
+    "gatsby-plugin-react-helmet": "^3.0.9",
+    "gatsby-plugin-sass": "^2.0.11",
+    "gatsby-plugin-typescript": "^2.0.11",
+    "prettier": "^1.16.4",
+    "sucrase": "^3.10.0"
+  }
+}
