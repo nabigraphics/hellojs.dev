@@ -9,8 +9,8 @@
     "gatsby": "sucrase-node ./node_modules/gatsby/dist/bin/gatsby.js",
     "gh-pages": "gh-pages -d public -b master",
     "dev": "npm run gatsby develop",
-    "build": "gatsby build",
-    "start": "gatsby serve",
+    "build": "npm run gatsby build",
+    "start": "npm run gatsby serve",
     "deploy": "npm-run-all build gh-pages"
   },
   "dependencies": {
