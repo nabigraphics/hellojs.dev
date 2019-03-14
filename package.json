@@ -7,9 +7,11 @@
   "private": true,
   "scripts": {
     "gatsby": "sucrase-node ./node_modules/gatsby/dist/bin/gatsby.js",
+    "gh-pages": "gh-pages -d public -b master",
     "dev": "npm run gatsby develop",
     "build": "gatsby build",
-    "start": "gatsby serve"
+    "start": "gatsby serve",
+    "deploy": "npm-run-all build gh-pages"
   },
   "dependencies": {
     "@types/classnames": "^2.2.7",
@@ -17,7 +19,9 @@
     "classnames": "^2.2.6",
     "eva-icons": "^1.1.1",
     "gatsby": "^2.1.30",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
+    "npm-run-all": "^4.1.5",
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0"
