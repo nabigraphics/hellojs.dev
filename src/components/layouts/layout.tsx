@@ -18,7 +18,7 @@ export default ({ children }: LayoutProps) => (
   <>
     <Helmet>
       <link
-        href="https://fonts.googleapis.com/css?family=Work+Sans:300"
+        href="https://fonts.googleapis.com/css?family=Work+Sans:300:600"
         rel="stylesheet"
       />
     </Helmet>
