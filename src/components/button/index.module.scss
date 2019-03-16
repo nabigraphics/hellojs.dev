@@ -14,8 +14,11 @@ $button-dark-background-color: #121213;
   box-sizing: border-box;
   border-radius: $button-border;
   padding: $button-padding;
+  line-height: 16px;
   @include mboxshadow(1);
   color: #121213;
+  font-size: 16px;
+  margin: 0;
 
   &.light {
     background-color: $button-light-background-color;

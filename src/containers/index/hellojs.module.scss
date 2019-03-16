@@ -1,0 +1,52 @@
+@import "scss/theme/default";
+$message-box-border-size: 25px;
+$message-gap: 14px;
+.container {
+  font-family: "Work Sans", sans-serif;
+  font-weight: 300;
+  margin: 0;
+  display: inline-block;
+  color: $primary-color;
+}
+
+.loop {
+  margin-left: $message-gap;
+  font-weight: 600;
+}
+
+.hellojs {
+  position: relative;
+  background-color: white;
+  padding: 24px 74px 24px 54px;
+  font-size: 64px;
+  //border-top-left-radius: $message-box-border-size;
+  //border-top-right-radius: $message-box-border-size;
+  //border-bottom-right-radius: $message-box-border-size;
+  border-radius: $message-box-border-size;
+  @include mboxshadow(1);
+  //&:after {
+  //  border-color: rgba(136, 183, 213, 0);
+  //  border-top-color: #88b7d5;
+  //  border-width: 100px;
+  //  margin-left: -100px;
+  //}
+}
+
+.hello {
+  line-height: 0;
+}
+
+@include respond(phone) {
+  .loop {
+    margin-left: $message-gap / 2;
+  }
+  .hellojs {
+    padding: 7px 14px 7px 7px;
+    //padding: 7px 7px 7px 7px;
+    font-size: 24px;
+    border-radius: $message-box-border-size / 2;
+    //border-top-left-radius: $message-box-border-size / 2;
+    //border-top-right-radius: $message-box-border-size / 2;
+    //border-bottom-right-radius: $message-box-border-size / 2;
+  }
+}

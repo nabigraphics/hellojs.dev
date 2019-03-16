@@ -15,10 +15,20 @@ class SocialLinks extends Component {
           className={cx("item")}
         >
           <i className={cx("eva eva-github", "icon")} aria-disabled />
-          <span className={cx("text")}>github</span>
         </Button>
-        <Button title="Comming Soon" disabled className={cx("item")}>
-          blog
+        <Button
+          href="https://twitter.com/nabigraphics"
+          target="_blank"
+          className={cx("item")}
+        >
+          <i className={cx("eva eva-twitter", "icon")} aria-disabled />
+        </Button>
+        <Button
+          href="https://www.linkedin.com/in/nabigraphics/"
+          target="_blank"
+          className={cx("item")}
+        >
+          <i className={cx("eva eva-linkedin", "icon")} aria-disabled />
         </Button>
       </div>
     );

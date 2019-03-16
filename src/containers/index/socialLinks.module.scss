@@ -1,16 +1,22 @@
 @import "scss/theme/default";
-
+$item-border-radius-size: 10px;
 .list {
   margin-top: $box-gap-size * 2;
-  display: block;
+  display: inline-block;
   position: relative;
-  width: 100%;
-  max-width: 250px;
+  //width: 100%;
+  //max-width: 250px;
   .item {
-    width: 100%;
-    margin-bottom: 10px;
+    text-align: left;
+    //width: 100%;
+    margin-right: 10px;
+    border-radius: $item-border-radius-size;
+    background-color: white;
+    &:hover {
+      color: $secondary-color;
+    }
     &:last-child {
-      margin-bottom: 0;
+      margin-right: 0;
     }
   }
 }
@@ -22,6 +28,12 @@
 .text {
   position: relative;
   margin-left: $box-gap-size;
-  top: -2px;
-  vertical-align: middle;
+}
+
+@include respond(phone) {
+  .list {
+    .item {
+      border-radius: $item-border-radius-size / 2;
+    }
+  }
 }

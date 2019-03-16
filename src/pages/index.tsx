@@ -3,6 +3,7 @@ import React, { Component } from "react";
 import classNames from "classnames/bind";
 // import component
 import SocialLinks from "containers/index/socialLinks";
+import Hellojs from "containers/index/hellojs";
 // import styles
 import styles from "./index.module.scss";
 
@@ -12,7 +13,7 @@ class IndexPage extends Component {
   render() {
     return (
       <div className={cx("container")}>
-        <h1 className={cx("hellojs")}>hello, JS</h1>
+        <Hellojs />
         <SocialLinks />
       </div>
     );
