@@ -39,7 +39,8 @@ class Button extends Component<ButtonProps> {
       disabled,
       href,
       target,
-      onClick
+      onClick,
+      ...props
     } = this.props;
 
     if (href !== undefined) {
@@ -47,7 +48,7 @@ class Button extends Component<ButtonProps> {
         disabled
       });
       return (
-        <a href={href} target={target} className={anchorClass}>
+        <a href={href} {...props} target={target} className={anchorClass}>
           {children}
         </a>
       );

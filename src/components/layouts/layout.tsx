@@ -18,6 +18,8 @@ interface LayoutProps {
 export default ({ children }: LayoutProps) => (
   <>
     <Helmet>
+      <html lang="en" />
+      <title>Jusung Hwang (nabigraphics)</title>
       <link
         href="https://fonts.googleapis.com/css?family=Work+Sans:300:600"
         rel="stylesheet"
