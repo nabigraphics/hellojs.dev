@@ -1,4 +1,5 @@
 // import global scss
+import "normalize.css";
 import "scss/common.scss";
 import "eva-icons/style/scss/eva-icons.scss";
 // import modules
