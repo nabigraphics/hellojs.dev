@@ -1,0 +1,48 @@
+@import "scss/theme/default";
+$item-border-radius-size: 10px;
+.list {
+  display: inline-block;
+  position: relative;
+  line-height: $nav-height;
+  height: $nav-height;
+}
+
+.item {
+  text-align: left;
+  //width: 100%;
+  margin-right: 10px;
+  border-radius: $item-border-radius-size;
+  background-color: white;
+  @include mboxshadow(1);
+
+  .icon {
+    color: $gray-600;
+    transition: all 0.3s $material-standard-bezier;
+  }
+  &:hover {
+    @include mboxshadow(2);
+    .icon {
+      color: $primary-color;
+    }
+  }
+  &:last-child {
+    margin-right: 0;
+  }
+}
+
+.icon:global(.eva) {
+  vertical-align: middle;
+}
+
+.text {
+  position: relative;
+  margin-left: $box-gap-size;
+}
+
+//@include respond(phone) {
+//  .list {
+//    .item {
+//      border-radius: $item-border-radius-size / 2;
+//    }
+//  }
+//}

@@ -1,6 +1,6 @@
 import React, { Component } from "react";
 import classNames from "classnames/bind";
-import Button from "components/button/index";
+import Button from "components/button";
 import styles from "./socialLinks.module.scss";
 
 const cx = classNames.bind(styles);
