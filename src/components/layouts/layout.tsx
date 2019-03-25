@@ -6,6 +6,8 @@ import "eva-icons/style/scss/eva-icons.scss";
 import React, { ReactNode } from "react";
 import Helmet from "react-helmet";
 import classNames from "classnames/bind";
+// import components
+import Header from "./header";
 // import layout module scss
 import styles from "./layout.module.scss";
 
@@ -20,11 +22,9 @@ export default ({ children }: LayoutProps) => (
     <Helmet>
       <html lang="en" />
       <title>Jusung Hwang (nabigraphics)</title>
-      <link
-        href="https://fonts.googleapis.com/css?family=Work+Sans:300:600"
-        rel="stylesheet"
-      />
+      <link href="css/normalize.css" rel="stylesheet" type="text/css" />
     </Helmet>
+    <Header />
     <div className={cx("layoutWrapper")}>{children}</div>
   </>
 );
