@@ -1,7 +1,7 @@
 @import "scss/theme/default";
 
 $button-border: $border-radius-size;
-$button-padding: 8px 14px;
+$button-padding: 8px 16px;
 $button-light-background-color: white;
 $button-dark-background-color: #121213;
 
@@ -15,16 +15,30 @@ $button-dark-background-color: #121213;
   border-radius: $button-border;
   padding: $button-padding;
   line-height: 16px;
-  @include mboxshadow(1);
   color: #121213;
   font-size: 16px;
   margin: 0;
+  @include mboxshadow(1);
 
+  // theme
   &.light {
     background-color: $button-light-background-color;
   }
   &.dark {
     background-color: $button-dark-background-color;
+  }
+  &.primary {
+    background-color: $primary-color;
+    color: white;
+  }
+  &.secondary {
+    background-color: $secondary-color;
+    color: white;
+  }
+
+  // border style
+  &.rounded {
+    border-radius: 100px;
   }
 
   &.href {
@@ -44,6 +58,14 @@ $button-dark-background-color: #121213;
     cursor: pointer;
     &:hover {
       @include mboxshadow(2);
+      &.primary {
+        background-color: lighten($primary-color, 10);
+        color: white;
+      }
+      &.secondary {
+        background-color: lighten($secondary-color, 10);
+        color: white;
+      }
     }
   }
 

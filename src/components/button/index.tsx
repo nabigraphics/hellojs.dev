@@ -2,7 +2,8 @@ import React, {
   Component,
   ReactNode,
   ButtonHTMLAttributes,
-  AnchorHTMLAttributes
+  AnchorHTMLAttributes,
+  CSSProperties
 } from "react";
 import classNames from "classnames/bind";
 import ThemeType from "structures/Theme";
@@ -15,6 +16,8 @@ interface DefaultButtonProps {
   theme?: ThemeType;
   className?: string;
   disabled?: boolean;
+  rounded?: boolean;
+  style?: CSSProperties;
 }
 
 type NativeButtonProps = DefaultButtonProps &
@@ -28,15 +31,18 @@ type ButtonProps = NativeButtonProps & AnchorButtonProps;
 class Button extends Component<ButtonProps> {
   public static defaultProps: ButtonProps = {
     theme: ThemeType.Light,
-    disabled: false
+    disabled: false,
+    rounded: false
   };
 
   renderButton = () => {
     const {
       className,
       children,
+      style,
       theme,
       disabled,
+      rounded,
       href,
       target,
       onClick,
@@ -44,18 +50,37 @@ class Button extends Component<ButtonProps> {
     } = this.props;
 
     if (href !== undefined) {
-      const anchorClass = cx("button", { href }, className, theme, {
-        disabled
-      });
+      const anchorClass = cx(
+        "button",
+        { href },
+        className,
+        theme,
+        { rounded },
+        {
+          disabled
+        }
+      );
       return (
-        <a href={href} {...props} target={target} className={anchorClass}>
+        <a
+          href={href}
+          style={style}
+          {...props}
+          target={target}
+          className={anchorClass}
+        >
           {children}
         </a>
       );
     }
-    const buttonClass = cx("button", className, theme, { disabled });
+    const buttonClass = cx(
+      "button",
+      className,
+      theme,
+      { rounded },
+      { disabled }
+    );
     return (
-      <button onClick={onClick} className={buttonClass}>
+      <button onClick={onClick} style={style} className={buttonClass}>
         {children}
       </button>
     );
