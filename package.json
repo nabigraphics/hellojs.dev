@@ -8,9 +8,9 @@
   "scripts": {
     "gatsby": "sucrase-node ./node_modules/gatsby/dist/bin/gatsby.js",
     "gh-pages": "gh-pages -d public -b master",
-    "dev": "npm run gatsby develop",
+    "dev": "npm run gatsby -- develop -H 0.0.0.0",
     "build": "npm run gatsby build",
-    "start": "npm run gatsby serve",
+    "start": "npm run gatsby -- serve -H 0.0.0.0 -p 8000",
     "deploy": "npm-run-all build gh-pages"
   },
   "dependencies": {
@@ -18,7 +18,7 @@
     "@types/react-helmet": "^5.0.8",
     "classnames": "^2.2.6",
     "eva-icons": "^1.1.1",
-    "gatsby": "^2.1.30",
+    "gatsby": "^2.2.10",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "normalize.css": "^8.0.1",
@@ -26,7 +26,8 @@
     "react": "^16.8.4",
     "react-dom": "^16.8.4",
     "react-helmet": "^5.2.0",
-    "react-spring": "^8.0.15"
+    "react-spring": "^8.0.15",
+    "react-with-gesture": "^4.0.8"
   },
   "devDependencies": {
     "gatsby-plugin-layout": "^1.0.13",
