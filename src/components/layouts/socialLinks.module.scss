@@ -9,7 +9,6 @@ $item-border-radius-size: 10px;
 
 .item {
   text-align: left;
-  //width: 100%;
   margin-right: 10px;
   border-radius: $item-border-radius-size;
   background-color: white;
@@ -38,11 +37,3 @@ $item-border-radius-size: 10px;
   position: relative;
   margin-left: $box-gap-size;
 }
-
-//@include respond(phone) {
-//  .list {
-//    .item {
-//      border-radius: $item-border-radius-size / 2;
-//    }
-//  }
-//}

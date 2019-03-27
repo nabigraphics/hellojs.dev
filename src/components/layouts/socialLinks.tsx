@@ -10,6 +10,7 @@ class SocialLinks extends Component {
     return (
       <div className={cx("list")}>
         <Button
+          rounded
           aria-label="github"
           href="https://github.com/nabigraphics"
           target="_blank"
@@ -18,6 +19,7 @@ class SocialLinks extends Component {
           <i className={cx("eva eva-github", "icon")} aria-disabled />
         </Button>
         <Button
+          rounded
           aria-label="twitter"
           href="https://twitter.com/nabigraphics"
           target="_blank"
@@ -25,14 +27,14 @@ class SocialLinks extends Component {
         >
           <i className={cx("eva eva-twitter", "icon")} aria-disabled />
         </Button>
-        <Button
-          aria-label="linkedin"
-          href="https://www.linkedin.com/in/nabigraphics/"
-          target="_blank"
-          className={cx("item")}
-        >
-          <i className={cx("eva eva-linkedin", "icon")} aria-disabled />
-        </Button>
+        {/*<Button*/}
+        {/*aria-label="linkedin"*/}
+        {/*href="https://www.linkedin.com/in/nabigraphics/"*/}
+        {/*target="_blank"*/}
+        {/*className={cx("item")}*/}
+        {/*>*/}
+        {/*<i className={cx("eva eva-linkedin", "icon")} aria-disabled />*/}
+        {/*</Button>*/}
       </div>
     );
   }
