@@ -1,16 +1,49 @@
 @import "scss/theme/default";
-.container {
+.top-section {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
+  position: relative;
   width: 100%;
-  height: 100%;
-  padding: 40px;
+  max-width: 1440px;
+  margin: auto;
+  height: 100vh;
+  min-height: 720px;
+  padding: 0 40px;
   box-sizing: border-box;
 }
 
-@include respond(phone) {
+.about-me {
+  margin-top: $box-gap-size * 2;
+  padding: 12px 20px 12px 32px;
+  :global(.eva) {
+    vertical-align: middle;
+  }
+}
+
+.drag-text {
+  color: $gray-600;
+  text-align: center;
+  :global(.eva) {
+    vertical-align: middle;
+    line-height: 1px;
+    margin-right: $box-gap-size;
+  }
+}
+
+@include respond(tablet-port) {
+  .top-section {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .left {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .right {
+    margin-bottom: 40px;
+  }
   //.container {
   //  justify-content: flex-end;
   //}

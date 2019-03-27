@@ -1,0 +1,47 @@
+@import "scss/theme/default";
+$image-length: 3;
+$image-original-width-size: 1500;
+$image-original-height-size: 410;
+$image-width-size: $image-original-width-size / $image-length;
+$image-height-size: $image-original-height-size / 2;
+
+.mochi {
+  width: $image-width-size + px;
+  height: $image-height-size + px;
+  background: transparent url("/images/mochi.png") no-repeat 0 0;
+  background-size: $image-original-width-size + px;
+  &.down {
+    background-position: -$image-width-size * 1 + px 0;
+  }
+  &.up {
+    background-position: -$image-width-size * 2 + px 0;
+  }
+}
+
+@include respond(desktop) {
+  .mochi {
+    width: $image-width-size / 1.5 + px;
+    height: $image-height-size / 1.5 + px;
+    background-size: $image-original-width-size / 1.5 + px;
+    &.down {
+      background-position: -$image-width-size / 1.5 * 1 + px 0;
+    }
+    &.up {
+      background-position: -$image-width-size / 1.5 * 2 + px 0;
+    }
+  }
+}
+
+@include respond(phone) {
+  .mochi {
+    width: $image-width-size / 2 + px;
+    height: $image-height-size / 2 + px;
+    background-size: $image-original-width-size / 2 + px;
+    &.down {
+      background-position: -$image-width-size / 2 * 1 + px 0;
+    }
+    &.up {
+      background-position: -$image-width-size / 2 * 2 + px 0;
+    }
+  }
+}
