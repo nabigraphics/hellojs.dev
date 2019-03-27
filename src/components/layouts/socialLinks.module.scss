@@ -37,3 +37,10 @@ $item-border-radius-size: 10px;
   position: relative;
   margin-left: $box-gap-size;
 }
+
+@include respond(phone) {
+  .list {
+    padding-right: $box-gap-size * 8;
+    text-align: right;
+  }
+}

@@ -5,12 +5,6 @@ $nav-bottom-size: 2px;
 .nav {
   line-height: $nav-height;
   height: $nav-height;
-  //margin: 0;
-  //padding: 0;
-  //li {
-  //list-style: none;
-  //display: inline-block;
-  //}
 }
 
 .ul {
@@ -33,8 +27,35 @@ $nav-bottom-size: 2px;
     &:hover {
       color: $primary-color;
       border-bottom: $nav-bottom-size solid $primary-color;
-      //color: white;
-      //background-color: $primary-color;
+    }
+  }
+}
+
+@include respond(phone) {
+  .nav {
+    line-height: initial;
+    height: auto;
+    margin: $nav-height * 2 0 0 0;
+  }
+  .ul {
+    margin: 0;
+    li {
+      line-height: $nav-height / 1.5;
+      height: $nav-height / 1.5;
+      display: block;
+      text-align: right;
+      width: 100%;
+      margin: 0;
+      padding: 0 $box-gap-size * 8 0 0;
+      font-size: 24px;
+      border-right: $nav-bottom-size solid transparent;
+      border-bottom: initial;
+      box-sizing: border-box;
+      &:hover {
+        color: $primary-color;
+        border-right: $nav-bottom-size solid $primary-color;
+        border-bottom: initial;
+      }
     }
   }
 }

@@ -7,7 +7,6 @@
   position: fixed;
   width: 100%;
   display: flex;
-  //padding: 40px;
   height: $header-height;
   min-height: $header-height;
   box-sizing: border-box;
@@ -38,23 +37,37 @@
 }
 
 @include respond(phone) {
-  .header {
-    //height: $header-mobile-height;
-    //min-height: $header-mobile-height;
-  }
-  .logo {
-    //margin-left: $header-gap / 2;
-  }
-  .logo-image {
-    //height: 30px;
-  }
   .menu-open-button {
-    //margin-right: $header-gap / 2;
-  }
-  .menu-open-button {
+    padding: 8px 10px;
+    z-index: 1002;
     display: initial;
+    &.open {
+      background: $error-color;
+      :global(.eva) {
+        color: white;
+      }
+    }
   }
   .menu {
-    display: none;
+    margin-right: 0;
+    @include mboxshadow(0);
+    transition: all 0.3s $material-accelerate-bezier;
+    opacity: 0;
+    transform: translate3d(100%, 0px, 0px);
+    background-color: white;
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    z-index: 1001;
+    top: 0;
+    right: 0;
+    width: 70%;
+    max-width: 300px;
+    height: 100%;
+    &.open {
+      opacity: 1;
+      transform: translate3d(0px, 0px, 0px);
+      @include mboxshadow(4);
+    }
   }
 }
