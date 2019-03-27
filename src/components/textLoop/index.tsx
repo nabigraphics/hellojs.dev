@@ -1,7 +1,13 @@
-import React, { Component, CSSProperties } from "react";
-import { Transition, animated, config } from "react-spring/renderprops";
+import React, {
+  useRef,
+  useState,
+  useEffect,
+  CSSProperties,
+  FunctionComponent
+} from "react";
+import { useTransition, animated } from "react-spring/web.cjs";
 import classNames from "classnames/bind";
-import RequestAnimeFrame from "utils/requestAnimeFrame";
+import RequestAnimeFrame from "raf";
 import styles from "./index.module.scss";
 
 const cx = classNames.bind(styles);
@@ -13,107 +19,75 @@ interface TextLoopProps {
   style?: CSSProperties;
 }
 
-interface TextLoopState {
-  index: number;
-  width: number;
-  height: number;
-}
+const TextLoop: FunctionComponent<TextLoopProps> = ({
+  className,
+  queue,
+  interval,
+  style
+}) => {
+  // state
+  const [index, setIndex] = useState(0);
+  const [size, setSize] = useState({ width: 0, height: 0 });
 
-type TextLoopTypes = TextLoopProps & TextLoopState;
+  const bind = useRef(null);
 
-class TextLoop extends Component<TextLoopTypes> {
-  public static defaultProps: TextLoopProps = {
-    queue: [],
-    interval: 1000
-  };
-
-  private state: TextLoopState = {
-    index: 0,
-    width: 0,
-    height: 0
-  };
-
-  componentDidMount() {
-    const { interval, queue } = this.props;
+  useEffect(() => {
     if (queue.length > 1) {
       const start = performance.now();
-      RequestAnimeFrame(() => this.tick(start, interval));
+      RequestAnimeFrame(() => tick(start));
     }
-  }
+  }, [index]);
 
-  tick = (start, interval) => {
+  const tick = start => {
     const currTime = performance.now() - start;
-    if (currTime >= interval) {
-      this.nextQueue();
-      RequestAnimeFrame(() => this.tick(performance.now(), interval));
+    if (currTime > interval) {
+      nextQueue();
     } else {
-      RequestAnimeFrame(() => this.tick(start, interval));
+      RequestAnimeFrame(() => tick(start));
     }
   };
 
-  nextQueue = () => {
-    const { queue } = this.props;
-    const index: number = (this.state.index + 1) % queue.length;
-    this.setState({ index });
+  const nextQueue = () => {
+    const nextIndex: number = (index + 1) % queue.length;
+    setIndex(nextIndex);
   };
 
-  updateContainer = (item, action, style) => {
-    const { queue } = this.props;
-    const { index } = this.state;
+  const update = (item, action) => {
     // current item slot
     const currentItem = queue[index];
     if (currentItem && currentItem === item && action === "enter") {
-      // update width, height state for container style
-      const { width, height } = style;
-      this.setState({ width, height });
+      // setSize into width, height for container style
+      const width = bind.current.offsetWidth;
+      const height = bind.current.offsetHeight;
+      setSize({ width, height });
     }
   };
 
-  render() {
-    const { className, queue, style } = this.props;
-    const { index, width, height } = this.state;
+  // react-spring transitions
+  const transitions = useTransition(queue[index], item => item, {
+    native: true,
+    from: { opacity: 0, transform: "translate3d(0,100%,0)" },
+    enter: {
+      opacity: 1,
+      transform: "translate3d(0,0%,0)"
+    },
+    leave: { opacity: 0, transform: "translate3d(0,-50%,0)" },
+    onFrame: update
+  });
+  return (
+    <div className={cx(className, "container")} style={{ ...style, ...size }}>
+      {transitions.map(({ item, props, key }) => (
+        <animated.div ref={bind} key={key} className={cx("item")} style={props}>
+          {item}
+        </animated.div>
+      ))}
+    </div>
+  );
+};
 
-    if (!queue.length) return null;
-
-    return (
-      <div
-        className={cx(className, "container")}
-        style={{ ...style, width, height }}
-      >
-        <Transition
-          native
-          items={queue[index]}
-          update={item => item}
-          from={{
-            opacity: 0,
-            transform: "translate3d(0,100%,0)"
-          }}
-          enter={{
-            opacity: 1,
-            transform: "translate3d(0,0%,0)",
-            width: "auto",
-            height: "auto"
-          }}
-          leave={{
-            opacity: 0,
-            transform: "translate3d(0,-50%,0)"
-          }}
-          config={config.stiff}
-          onFrame={this.updateContainer}
-        >
-          {item => props => (
-            <animated.div
-              onLoad={() => console.log("loaded!")}
-              className={cx("item")}
-              style={props}
-            >
-              {item}
-            </animated.div>
-          )}
-        </Transition>
-      </div>
-    );
-  }
-}
+TextLoop.defaultProps = {
+  queue: [],
+  interval: 1000
+};
 
 export default TextLoop;
