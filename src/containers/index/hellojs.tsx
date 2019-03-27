@@ -12,7 +12,7 @@ class Hellojs extends Component {
     return (
       <div className={cx("container")}>
         <div className={cx("hellojs")}>
-          <span className={cx("hello")}>👋 hello,</span>
+          <span className={cx("hello")}>hello,</span>
           <TextLoop
             interval={3000}
             className={cx("loop")}
