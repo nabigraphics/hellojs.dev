@@ -19,4 +19,9 @@
       @content;
     }
   }
+  @if $breakpoint == desktop {
+    @media only screen and (max-width: 1440.98px) {
+      @content;
+    }
+  }
 }
