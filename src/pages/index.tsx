@@ -27,7 +27,6 @@ class IndexPage extends Component {
             <i className="eva eva-arrowhead-up-outline" aria-disabled />
             (Drag Me 🙂)
           </p>
-          {/*<p className={cx("waveEmoji")}>👋</p>*/}
         </div>
       </div>
     );
