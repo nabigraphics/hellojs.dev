@@ -1,0 +1,40 @@
+@import "scss/theme/default";
+
+$nav-bottom-size: 2px;
+
+.nav {
+  line-height: $nav-height;
+  height: $nav-height;
+  //margin: 0;
+  //padding: 0;
+  //li {
+  //list-style: none;
+  //display: inline-block;
+  //}
+}
+
+.ul {
+  padding: 0;
+  margin: 0 $box-gap-size * 2 0 0;
+  li {
+    line-height: $nav-height / 2;
+    height: $nav-height / 2;
+    list-style: none;
+    display: inline-block;
+    padding: 0 $box-gap-size;
+    margin: 0 $box-gap-size * 2;
+    transition: all 0.3s $material-standard-bezier;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    color: $gray-600;
+    border-bottom: $nav-bottom-size solid transparent;
+    box-sizing: border-box;
+    &:hover {
+      color: $primary-color;
+      border-bottom: $nav-bottom-size solid $primary-color;
+      //color: white;
+      //background-color: $primary-color;
+    }
+  }
+}

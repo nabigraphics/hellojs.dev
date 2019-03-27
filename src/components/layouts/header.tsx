@@ -1,0 +1,34 @@
+import React, { Component } from "react";
+import classNames from "classnames/bind";
+import NavMenu from "./navMenu";
+import SocialLinks from "components/layouts/socialLinks";
+// import styles
+import styles from "./header.module.scss";
+import Button from "../button";
+
+const cx = classNames.bind(styles);
+
+class Header extends Component {
+  render() {
+    return (
+      <div className={cx("header")}>
+        <div className={cx("logo")}>
+          <img
+            alt="nabigraphics Logo"
+            className={cx("logoImage")}
+            src="/images/logo.png"
+          />
+        </div>
+        <Button className={cx("menuOpenButton")}>
+          <i className="eva eva-menu-outline" aria-disabled />
+        </Button>
+        <div className={cx("menu")}>
+          <NavMenu />
+          <SocialLinks />
+        </div>
+      </div>
+    );
+  }
+}
+
+export default Header;
