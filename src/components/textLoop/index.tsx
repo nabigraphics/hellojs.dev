@@ -28,14 +28,19 @@ const TextLoop: FunctionComponent<TextLoopProps> = ({
   // state
   const [index, setIndex] = useState(0);
   const [size, setSize] = useState({ width: 0, height: 0 });
-
   const bind = useRef(null);
+  const currentRaf = useRef(null);
 
   useEffect(() => {
     if (queue.length > 1) {
+      // set current tick of Raf
       const start = performance.now();
-      RequestAnimeFrame(() => tick(start));
+      currentRaf.current = RequestAnimeFrame(() => tick(start));
     }
+    return () => {
+      // unmount cancel to tick
+      RequestAnimeFrame.cancel(currentRaf.current);
+    };
   }, [index]);
 
   const tick = start => {
@@ -43,7 +48,7 @@ const TextLoop: FunctionComponent<TextLoopProps> = ({
     if (currTime > interval) {
       nextQueue();
     } else {
-      RequestAnimeFrame(() => tick(start));
+      currentRaf.current = RequestAnimeFrame(() => tick(start));
     }
   };
 
