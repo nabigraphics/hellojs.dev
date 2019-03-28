@@ -24,8 +24,6 @@ export default () => {
     }
   }));
   const bind = useGesture(({ down, delta, distance, xy }) => {
-    // console.log(down, delta, asdf);
-    // onToggle(down);
     if (down) {
       onToggle("down");
     } else {
