@@ -1,10 +1,11 @@
 import React, { FunctionComponent, useState } from "react";
+import { navigate } from "gatsby";
 import classNames from "classnames/bind";
 import NavMenu from "./navMenu";
 import SocialLinks from "components/layouts/socialLinks";
+import Button from "components/button";
 // import styles
 import styles from "./header.module.scss";
-import Button from "../button";
 
 const cx = classNames.bind(styles);
 
@@ -12,7 +13,7 @@ const Header: FunctionComponent = () => {
   const [open, set] = useState(false);
   return (
     <div className={cx("header")}>
-      <div className={cx("logo")}>
+      <div className={cx("logo")} onClick={() => navigate("/")}>
         <img
           alt="nabigraphics Logo"
           className={cx("logoImage")}

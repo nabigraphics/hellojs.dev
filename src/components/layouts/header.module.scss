@@ -4,7 +4,7 @@
   z-index: 1000;
   top: 0;
   left: 0;
-  position: fixed;
+  position: absolute;
   width: 100%;
   display: flex;
   height: $header-height;
@@ -17,6 +17,11 @@
 .logo {
   margin-left: $header-gap - 8px;
   line-height: 0;
+  cursor: pointer;
+  transition: opacity 0.3s $material-standard-bezier;
+  &:hover {
+    opacity: 0.65;
+  }
 }
 
 .logo-image {
@@ -37,6 +42,12 @@
 }
 
 @include respond(phone) {
+  .logo {
+    transition: initial;
+    &:hover {
+      opacity: initial;
+    }
+  }
   .menu-open-button {
     padding: 8px 10px;
     z-index: 1002;
