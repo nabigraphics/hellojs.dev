@@ -1,6 +1,7 @@
 // import modules
 import React, { Component } from "react";
 import classNames from "classnames/bind";
+import { navigate } from "gatsby";
 // import component
 import Hellojs from "containers/index/hellojs";
 import Button from "components/button";
@@ -17,7 +18,12 @@ class IndexPage extends Component {
           {/* Hello JS Text Loop */}
           <Hellojs />
           {/* About Me Button */}
-          <Button theme="secondary" rounded={true} className={cx("aboutMe")}>
+          <Button
+            onClick={() => navigate("/about")}
+            theme="secondary"
+            rounded={true}
+            className={cx("aboutMe")}
+          >
             About Me <i className="eva eva-chevron-right-outline" />
           </Button>
         </div>

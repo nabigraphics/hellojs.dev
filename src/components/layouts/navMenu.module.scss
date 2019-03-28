@@ -7,13 +7,13 @@ $nav-bottom-size: 2px;
   height: $nav-height;
 }
 
-.ul {
+.list {
   padding: 0;
   margin: 0 $box-gap-size * 2 0 0;
-  li {
+  a {
+    text-decoration: none;
     line-height: $nav-height / 2;
     height: $nav-height / 2;
-    list-style: none;
     display: inline-block;
     padding: 0 $box-gap-size;
     margin: 0 $box-gap-size * 2;
@@ -28,6 +28,10 @@ $nav-bottom-size: 2px;
       color: $primary-color;
       border-bottom: $nav-bottom-size solid $primary-color;
     }
+    &.active {
+      color: $secondary-color;
+      border-bottom: $nav-bottom-size solid $secondary-color;
+    }
   }
 }
 
@@ -37,9 +41,9 @@ $nav-bottom-size: 2px;
     height: auto;
     margin: $nav-height * 2 0 0 0;
   }
-  .ul {
+  .list {
     margin: 0;
-    li {
+    a {
       line-height: $nav-height / 1.5;
       height: $nav-height / 1.5;
       display: block;
@@ -54,6 +58,11 @@ $nav-bottom-size: 2px;
       &:hover {
         color: $primary-color;
         border-right: $nav-bottom-size solid $primary-color;
+        border-bottom: initial;
+      }
+      &.active {
+        color: $secondary-color;
+        border-right: $nav-bottom-size solid $secondary-color;
         border-bottom: initial;
       }
     }
