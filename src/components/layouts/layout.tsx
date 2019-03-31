@@ -3,8 +3,8 @@ import "normalize.css";
 import "scss/common.scss";
 import "eva-icons/style/scss/eva-icons.scss";
 // import modules
-import React, { FunctionComponent, useEffect } from "react";
-import { useTransition, animated, config } from "react-spring/web.cjs";
+import React, { FunctionComponent } from "react";
+import { useTransition, animated } from "react-spring";
 import Helmet from "react-helmet";
 import classNames from "classnames/bind";
 // import components
@@ -15,16 +15,16 @@ import styles from "./layout.module.scss";
 const cx = classNames.bind(styles);
 
 const Layout: FunctionComponent = ({ children }) => {
+  // react-spring transitions
   const transitions = useTransition(children, item => item.key, {
     native: true,
     from: { opacity: 0 },
     enter: { opacity: 1 },
-    leave: { opacity: 0 },
-    config: config.stiff
+    leave: { opacity: 0 }
   });
 
   return (
-    <div>
+    <>
       <Helmet
         htmlAttributes={{ lang: "en" }}
         title={"Jusung Hwang (nabigraphics)"}
@@ -51,7 +51,7 @@ const Layout: FunctionComponent = ({ children }) => {
           </animated.div>
         ))}
       </div>
-    </div>
+    </>
   );
 };
 
