@@ -1,0 +1,2 @@
+(window.webpackJsonp=window.webpackJsonp||[]).push([[4],{170:function(a){a.exports={pages:[{componentChunkName:"component---src-pages-index-tsx",jsonName:"index",path:"/"},{componentChunkName:"component---src-pages-about-tsx",jsonName:"about-f34",path:"/about/"}],dataPaths:{"about-f34":"708/path---about-f-34-4c2-0SUcWyAf8ecbYDsMhQkEfPzV8",index:"140/path---index-6a9-0SUcWyAf8ecbYDsMhQkEfPzV8"}}}}]);
+//# sourceMappingURL=pages-manifest-bb18a6c21b49589000bd.js.map
