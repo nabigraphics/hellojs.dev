@@ -17,13 +17,17 @@ interface TextLoopProps {
   interval?: number;
   className?: string;
   style?: CSSProperties;
+  prefix?: string;
+  suffix?: string;
 }
 
 const TextLoop: FunctionComponent<TextLoopProps> = ({
   className,
   queue,
   interval,
-  style
+  style,
+  suffix,
+  prefix
 }) => {
   // state
   const [index, setIndex] = useState(0);
@@ -80,12 +84,21 @@ const TextLoop: FunctionComponent<TextLoopProps> = ({
     onFrame: update
   });
   return (
-    <div className={cx(className, "container")} style={{ ...style, ...size }}>
-      {transitions.map(({ item, props, key }) => (
-        <animated.div ref={bind} key={key} className={cx("item")} style={props}>
-          {item}
-        </animated.div>
-      ))}
+    <div>
+      {prefix && prefix}
+      <div className={cx(className, "container")} style={{ ...style, ...size }}>
+        {transitions.map(({ item, props, key }) => (
+          <animated.div
+            ref={bind}
+            key={key}
+            className={cx("item")}
+            style={props}
+          >
+            {item}
+          </animated.div>
+        ))}
+      </div>
+      {suffix && suffix}
     </div>
   );
 };
