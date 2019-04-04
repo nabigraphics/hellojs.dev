@@ -84,9 +84,9 @@ const TextLoop: FunctionComponent<TextLoopProps> = ({
     onFrame: update
   });
   return (
-    <div>
+    <div className={cx(className, "container")} style={style}>
       {prefix && prefix}
-      <div className={cx(className, "container")} style={{ ...style, ...size }}>
+      <div className={cx("animation")} style={size}>
         {transitions.map(({ item, props, key }) => (
           <animated.div
             ref={bind}

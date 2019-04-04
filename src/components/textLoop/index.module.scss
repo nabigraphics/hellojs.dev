@@ -7,8 +7,13 @@
 
 .container {
   position: relative;
-  vertical-align: top;
   display: inline-block;
+  vertical-align: top;
+}
+
+.animation {
+  display: inline-block;
+  vertical-align: top;
   transition: all 0.3s ease-in-out;
   text-align: left;
 }
