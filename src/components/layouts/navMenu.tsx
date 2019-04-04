@@ -16,7 +16,7 @@ const NavMenu: FunctionComponent<NavMenuProps> = ({ open }) => {
   return (
     <nav className={cx("nav", { open })}>
       <div className={cx("list", { open })}>
-        <Link to="about" {...defaultLinkProps}>
+        <Link to="/about/" {...defaultLinkProps}>
           About
         </Link>
         {/*<Link to="about" {...defaultLinkProps}>*/}
