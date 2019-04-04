@@ -3,6 +3,7 @@ export = {
     "gatsby-plugin-react-helmet",
     "gatsby-plugin-sass",
     "gatsby-plugin-typescript",
+    "gatsby-mdx",
     {
       resolve: "gatsby-plugin-layout",
       options: {

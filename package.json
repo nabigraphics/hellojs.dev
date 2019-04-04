@@ -14,13 +14,15 @@
     "deploy": "npm-run-all build gh-pages"
   },
   "dependencies": {
+    "@mdx-js/mdx": "^0.20.3",
+    "@mdx-js/tag": "^0.20.3",
     "@types/classnames": "^2.2.7",
     "@types/react-helmet": "^5.0.8",
     "classnames": "^2.2.6",
     "core-js": "2",
     "eva-icons": "^1.1.1",
     "gatsby": "^2.3.2",
-    "gatsby-plugin-layout": "^1.0.14",
+    "gatsby-mdx": "^0.4.4",
     "gh-pages": "^2.0.1",
     "node-sass": "^4.11.0",
     "normalize.css": "^8.0.1",
@@ -34,6 +36,7 @@
   },
   "devDependencies": {
     "@hot-loader/react-dom": "^16.8.5",
+    "gatsby-plugin-layout": "^1.0.14",
     "gatsby-plugin-react-helmet": "^3.0.9",
     "gatsby-plugin-sass": "^2.0.11",
     "gatsby-plugin-typescript": "^2.0.11",
