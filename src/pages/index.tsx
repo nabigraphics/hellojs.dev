@@ -19,7 +19,7 @@ class IndexPage extends Component {
           <Hellojs />
           {/* About Me Button */}
           <Button
-            onClick={() => navigate("/about")}
+            onClick={() => navigate("/about/")}
             theme="secondary"
             rounded={true}
             className={cx("aboutMe")}
