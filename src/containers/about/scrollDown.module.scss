@@ -1,0 +1,19 @@
+@import "scss/theme/default";
+
+.text,
+.icon {
+  color: $gray-800;
+}
+
+.text {
+  font-family: "Work Sans", sans-serif;
+  font-size: 14px;
+  letter-spacing: 1px;
+  margin-right: $box-gap-size;
+  user-select: none;
+}
+
+.icon {
+  font-size: 24px !important;
+  vertical-align: middle;
+}

@@ -1,0 +1,28 @@
+@import "scss/theme/default";
+
+.title,
+.subtitle {
+  font-family: "Work Sans", sans-serif;
+  letter-spacing: 0.25px;
+}
+
+.title {
+  font-size: 64px;
+  color: $primary-color;
+  margin: 0;
+}
+.subtitle {
+  font-size: 24px;
+  color: $gray-800;
+  margin: $box-gap-size * 2 0 0 0;
+}
+
+@include respond(phone) {
+  .title {
+    font-size: 24px;
+  }
+
+  .subtitle {
+    font-size: 14px;
+  }
+}
