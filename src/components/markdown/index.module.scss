@@ -1,0 +1,73 @@
+@import "scss/theme/default";
+
+.heading,
+.text {
+  font-family: "Work Sans", sans-serif;
+  margin: 0.6em 0;
+  line-height: 1.5em;
+}
+
+.heading {
+  color: $gray-900;
+}
+
+.h3 {
+  font-weight: 500;
+}
+
+.text,
+.li,
+.ul {
+  color: $gray-800;
+
+  a {
+    color: $secondary-color;
+  }
+  a:visited {
+    color: darken($secondary-color, 20);
+  }
+}
+
+.pre,
+.code {
+  padding: 0.2rem 0.4rem;
+  font-size: 0.885rem;
+  color: $primary-color;
+  font-family: "Work Sans", sans-serif;
+  //background-color: lighten($secondary-color, 45);
+  background-color: $gray-200;
+  border-radius: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.pre {
+  white-space: pre-wrap;
+  white-space: -moz-pre-wrap;
+  white-space: -pre-wrap;
+  white-space: -o-pre-wrap;
+  word-wrap: break-word;
+}
+
+// Italic
+.em {
+  color: $gray-700;
+}
+
+// List
+.ul {
+  //list-style-type: circle;
+}
+
+.li {
+  margin: 0.6em 0;
+  strong {
+    font-weight: 500;
+  }
+}
+
+// Break
+.hr {
+  border: 0;
+  border-bottom: 1px solid $gray-300;
+  margin: 2em 0;
+}
